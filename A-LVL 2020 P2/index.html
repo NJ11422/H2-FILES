@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<header>
+	<h1>Datalist</h1>
+</header>
+<body>
+	<table border = '1'>
+	
+	<tr>
+		<td>Full Name</td>
+		<td>Screen Name</td>
+		<td>Class</td>
+	</tr>
+	{% for data in datas %}
+	<tr>
+		<td>{{data[0]}}</td>
+		<td>{{data[2]}}</td>
+		{% if data[3] == 0 %}
+		<td>Student</td>
+		{% else %}
+		{% if data[2][-5:] == "Staff" %}
+		<td>Staff</td>
+		{% else %}
+		<td>Person</td>
+		{% endif %}
+		{% endif %}
+	{% endfor %}
+	</tr>
+	</table>
+	
+		
+</body>
+</html>
